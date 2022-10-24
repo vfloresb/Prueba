@@ -1,0 +1,36 @@
+﻿@model List<Partido>
+@{ ViewData["Title"] = "Home Page"; }
+<form method="post">
+    <div class="text-center">
+        <h1 class="display-4">Score Board</h1>
+    </div>
+    <h2 class="text-center">Visualizar Marcador en juego</h2>
+    <div class="text-center col-12">
+        <button class="btn-info text-center" formmethod="post" asp-controller="Partidos" asp-action="ListarPartidosCurso">Visualizar Resultados</button>
+        <br />
+    </div>
+    <h2 class="text-center">Resumen de Partidos</h2>
+    <div class="text-center col-12">
+        <button class="btn-info text-center" formmethod="post" asp-controller="Partidos" asp-action="ListarPartidos">Visualizar Resultados</button>
+        <br />
+    </div>
+    <h2 class="text-center">Nuevo Partido</h2>
+    <div class="text-center col-12">
+        <button class="btn-info" formmethod="get" asp-controller="Partidos" asp-action="IniciarPartido">Nuevo Partido</button>
+        <br />
+    </div>
+    <h2 class="text-center">Actualizar Partido</h2>
+    <div class="text-center col-12">
+        @if (ViewBag.numeropartidos > 0)
+        {
+<div class="text-center col-12">
+    <select asp-items="ViewBag.partidos" id="valorSeleccionado" name="valorseleccionado"></select>
+</div>
+                <div class="text-center col-12">
+                    <button class="btn-info align-bottom" formmethod="get" asp-controller="Partidos" asp-action="ActualizarPartido">Actualizar Partido</button>
+                </div> }
+                            else
+                            {
+                <label>No hay partidos pendientes de actualizar</label>}
+    </div>
+</form>

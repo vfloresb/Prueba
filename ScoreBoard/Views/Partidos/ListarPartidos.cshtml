@@ -1,0 +1,31 @@
+﻿@model List<Partido>
+@{
+    ViewData["Title"] = "Score Board";
+}
+<h2 class="text-center">Resumen de Partidos</h2>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr class="active">
+            <th>Local</th>
+            <th>Visitante</th>
+            <th>Puntación Local</th>
+            <th>Puntación Visitante</th>
+            <th>Estado</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.local</td>
+                <td>@item.visitante</td>
+                <td>@item.PuntuacionLocal</td>
+                <td>@item.PuntuacionVisitante</td>
+                <td>@item.Estado</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

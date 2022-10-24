@@ -1,0 +1,53 @@
+﻿@model Partido
+<form method="post">
+    <div class="text-center col-12">
+        <p>Actualizar Partido.</p>
+        <input type="hidden" asp-for="id" />
+
+        <div class="text-center col-12">
+            <div class="text-left col-12">
+                <label>Local</label>
+            </div>
+            <div class="text-left col-12">
+                <input type="text" id="Local" asp-for="local" />
+                <input type="text" id="MarcadorLocal" asp-for="PuntuacionLocal" value="0" />
+            </div>
+        </div>
+
+        <div class="text-center col-12">
+            <div class="text-left col-12">
+                <label>Visitante</label>
+            </div>
+            <div class="text-left col-12">
+                <input type="text" id="Visitante" asp-for="visitante" />
+                <input type="text" id="MarcadorVisitante" value="0" asp-for="PuntuacionVisitante" />
+            </div>
+        </div>
+        <div class="text-center col-12">
+            <div class="text-left col-12">
+                <label>Fecha</label>
+            </div>
+            <div class="text-left col-12">
+                <input type="text" id="Fecha" asp-for="Fecha" readonly />
+            </div>
+        </div>
+        <div class="text-center col-12">
+            <div class="text-left col-12">
+                <label>Estado</label>
+            </div>
+            <div class="text-left col-12">
+                <select asp-for="Estado">
+                    <option value="Jugando">Jugando</option>
+                    <option value="Descanso">Descanso</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-center col-12">
+            <div class="text-left col-12">
+                <button class="btn-info" asp-controller="Partidos" asp-action="ActualizarPartido" formmethod="post">Actualizar Partido</button>
+            </div>
+        </div>
+    </div>
+</form>
+
